@@ -12,11 +12,11 @@ caption, th, td { text-align: left; }
 
 h1, h2, h3, h4, h5, h6 { font-size: 1em; font-weight: normal; }
 
-select, option, input, textarea { font-family: inherit; font-size: inherit; font-weight: inherit; }
+select, option, input, textarea { font-size: inherit; font-family: inherit; }
 
 a, a:link, a:visited, a:active { outline: none !important; }
 
-body { font-size: 62.5% }
+body { font-size: 62.5%; line-height: 1; } /* line-height is a temporary trial */
 
 /* slightly enhanced, universal clearfix hack */
 
