@@ -1,8 +1,17 @@
 <?php
-
 /*
-	TODO Add a public set config method to configure options and use it in contructer.
+	Example Usage:
+	$config = array( // these values are all optional
+		'min_font_em' => 1,
+		'max_font_em' => 3,
+		'base_url' => '/tag/'
+	);
+	$tagger = new Tags($config);
+	$tagger->cloud($tags); // This returns links with font-sizes ranging from the min and max font em specified.
+	Example Ouput: <a href="base_url/tag_name" style="font-size: 1.2em;">tag_name</a>
+	
 */
+
 class Tags
 {
     
@@ -10,6 +19,16 @@ class Tags
     private $max_font_em        =   3;
 	private $base_url			= 	'/tag/';
     
+	public function __construct($config = array()) {
+		$this->set_config($config);
+	}
+	
+	public function set_config($config = array()) {
+		foreach ($config as $k => $v) {
+			if (isset($this->$k)) $this->$k = $v;
+		}
+	}
+	
 	/*
 	First two values for each array must follow this format. [0] = tag count, [1] = tag name
 	$tags = array(

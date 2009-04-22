@@ -1,10 +1,12 @@
 <?php
-// Example Usage
-// $im = new GDImage('foo.jpg');
-// $im->scale_crop(800, 600); // this method will resize and crop from center, use scale() to just resize to max width and height
-// $im->save_as('foo_new.jpg', 'jpg');
+/*
+	Example Usage:
+	$im = new GDImage('foo.jpg');
+	$im->scale_crop(800, 600); // this method will resize and crop from center, use scale() to just resize to max width and height
+	$im->save_as('foo_new.jpg', 'jpg');
 
-// TODO Proper Error Handling
+	TODO Proper Error Handling
+*/
 
 class GDImage
 {
