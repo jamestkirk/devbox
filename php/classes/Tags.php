@@ -1,7 +1,5 @@
 <?php
 
-isset($_GET['source']) and highlight_file(__FILE__) and exit();
-
 /*
 	TODO Add a public set config method to configure options and use it in contructer.
 */
@@ -13,7 +11,7 @@ class Tags
 	private $base_url			= 	'/tag/';
     
 	/*
-	Must be in the following format.
+	First two values for each array must follow this format. [0] = tag count, [1] = tag name
 	$tags = array(
 		array(20, 'star trek'),
 		array(10, 'stern'),
@@ -57,17 +55,4 @@ class Tags
 
 }
 
-$tags = array(
-	array(20, 'star trek'),
-	array(10, 'stern'),
-	array(1, 'star wars'),
-	array(10, 'conan')
-);
-
-$S31Tags = new S31Tags();
-
 ?>
-
-<div id="tags" style="font-size: 9px; font-family: verdana;">
-<?= $S31Tags->cloud($tags); ?>
-</div>
