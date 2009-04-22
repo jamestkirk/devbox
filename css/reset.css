@@ -14,20 +14,6 @@ h1, h2, h3, h4, h5, h6 { font-size: 1em; font-weight: normal; }
 
 select, option, input, textarea { font-size: inherit; font-family: inherit; }
 
-a, a:link, a:visited, a:active { outline: none !important; }
+a, a:link, a:visited, a:active,:focus { outline: none !important; }
 
 body { font-size: 62.5%; line-height: 1; } /* line-height is a temporary trial */
-
-/* slightly enhanced, universal clearfix hack */
-
-.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-
-.clearfix { display: inline-block; }
-
-/* start commented backslash hack \*/
-
-* html .clearfix { height: 1%; }
-
-.clearfix { display: block; }
-
-/* close commented backslash hack */
