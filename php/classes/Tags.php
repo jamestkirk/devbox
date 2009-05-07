@@ -46,7 +46,7 @@ class Tags
 		$tag_counts_total = count($tag_counts) - 1;
 
 		// Run a sort on the 2 dimensional array and sort by the 1st value of each array (returns tag counts sorted by popularity)
-        sort($tag_counts);
+		sort($tag_counts);
 
 		$tag_sizes = array();
 		foreach ($tag_counts as $position => $tag_count) {
