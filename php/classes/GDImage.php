@@ -15,17 +15,39 @@ class GDImage
 	private $height = null;
 	private $type   = null;
 
-	public function __construct($data = null) {
-		if (is_resource($data) && get_resource_type($data) == 'gd') {
+	public function __construct($data = null)
+	{
+		if (is_resource($data) && get_resource_type($data) == 'gd')
 			return $this->load_resource($data);
-		}
-		elseif (file_exists($data) && is_readable($data) && is_file($data)) {
+		elseif (file_exists($data) && is_readable($data) && is_file($data))
 			return $this->load_file($data);
-		}
-		else {
+		else
 			return false;
+	}
+	
+	public function __destruct()
+	{
+		if (is_resource($this->im) && get_resource_type($this->im) == 'gd')
+		{
+			imagedestroy($this->im);
 		}
 	}
+
+    // Return image data as a string.
+    // Is there a way to do this without using output buffering?
+    public function __tostring($type = 'jpg', $quality = 75)
+    {
+        ob_start();
+
+        if($type == 'jpg' && (imagetypesypes() & IMG_JPG))
+            imagejpeg($this->im, null, $quality);
+        elseif($type == 'png' && (imagetypes() & IMG_PNG))
+            imagepng($this->im);
+        elseif($type == 'gif' && (imagetypes() & IMG_GIF))
+            imagegif($this->im);
+
+        return ob_get_clean();
+    }
 
 	private function load_resource($im) {	
 		if (!is_resource($im) || !get_resource_type($im) == 'gd') {
