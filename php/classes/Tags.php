@@ -25,7 +25,7 @@ class Tags
 
 	public function set_config($config = array()) {
 		foreach ($config as $k => $v) {
-			if (isset($this->$k)) $this->$k = $v;
+			if (isset($this->$k) || is_null($this->$k)) $this->$k = $v;
 		}
 	}
 
