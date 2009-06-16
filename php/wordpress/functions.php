@@ -1,7 +1,8 @@
 <?php 
 
 /*
-	Example "functions.php" for a theme, this will isert a custom field into new posts.
+	Example "functions.php" for a theme, this will insert a custom field into new posts.
+	Data is inserted into database as a template tag under name-value
 */
 
 $meta_boxes =
