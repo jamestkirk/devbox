@@ -1,6 +1,6 @@
 <?php
 /*
-	Example Usage:
+	Sample Usage:
 	$im = new GD_Image('foo.jpg');
 	$im->scale_crop(800, 600); // this method will resize and crop from center, use scale() to just resize to max width and height
 	$im->save_as('foo_new.jpg');
