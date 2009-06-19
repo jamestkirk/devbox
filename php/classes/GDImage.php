@@ -1,9 +1,9 @@
 <?php
 /*
 	Example Usage:
-	$im = new GDImage('foo.jpg');
+	$im = new GD_Image('foo.jpg');
 	$im->scale_crop(800, 600); // this method will resize and crop from center, use scale() to just resize to max width and height
-	$im->save_as('foo_new.jpg', 'jpg');
+	$im->save_as('foo_new.jpg');
 
 	TODO Proper Error Handling
 */
@@ -14,6 +14,7 @@
 		private $width  = null;
 		private $height = null;
 		private $type   = null;
+		private $image_types = array('jpg' => 'jp(e)?g', 'png' => 'png', 'gif' => 'gif');
 
 		public function __construct($data = null)
 		{
@@ -94,8 +95,14 @@
 			return $this->load_resource($im);
 		}
 	
-		public function save_as($filename, $type = 'jpg', $quality = 90)
+		public function save_as($filename, $type = null, $quality = 90)
 		{
+			// If type isn't set, lets try and find the proper image type by file extension.
+			if (is_null($type))
+			{
+				$type = $this->find_image_type($filename);
+			}
+
 			if ($type == 'jpg' && (imagetypes() & IMG_JPG))
 			{
 				return imagejpeg($this->im, $filename, $quality);
@@ -196,6 +203,19 @@
 				$this->width = imagesx($this->im);
 				$this->height = imagesy($this->im);
 				return true;
+			}
+
+			return false;
+		}
+		
+		private function find_image_type($filename)
+		{
+			foreach ($this->image_types as $image_type => $regex)
+			{
+				if (preg_match('#.+\.' . $regex . '$#i', $filename))
+				{
+					return $image_type;
+				}
 			}
 
 			return false;
