@@ -7,11 +7,16 @@ var Site = {
 	},
 	
 	// this method is called on every page
-	start : function() {
+	init : function() {
 
 		// On Dom Ready
 		jQuery(function($) {
 			
+		});
+		
+		// On Window Load
+		jQuery(window).load(function ($) {
+
 		});
 		
 		// Load Immediately
@@ -19,13 +24,27 @@ var Site = {
 		
 		})(jQuery);
 
-
-		// On Window Load
-		jQuery(window).load(function ($) {
-
-		});
-
 	}
+	
+	/*
+		Use the following methodology when creating additional functions
+		home : function() {
+			// This function shall be called inline around a domready event.
+			init : function() {
+				
+			}
+			
+			update : function() {
+				// Function associated with home
+			},
+			
+			add : function() {
+				// Another function associated with home
+			}
+		}
+
+	*/
+	
 };
 
-Site.start();
+Site.init();
