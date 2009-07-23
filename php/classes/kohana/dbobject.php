@@ -1,9 +1,17 @@
 <?php defined('SYSPATH') or die('No direct script access.');
  
 /*
-	This is a work in progress.
-	A helper model that all models should extend.
-	All models should extend this.
+This is a work in progress.
+A helper model that all models should extend.
+All models should extend this.
+Example:
+class Nav_Model extends Dbobject_Model {
+	public function __construct()
+	{
+		parent::__construct('nav', 'id');
+	}
+}
+
 */
 
 class Dbobject_Model extends Model {
