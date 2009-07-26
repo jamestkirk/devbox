@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# The following scripts is meant to be run on a freshly installed server.
+# The following script is meant to be run on a freshly installed server.  (Tested on Debian 5 and Ubuntu 8.04 only)
 # It uses the virtualmin control panel to install all of the LAMP Tools and Services (http://www.virtualmin.com/download)
 # It will even configure hostname if it's not set.
 # Once this script is complete, login using http://hostname:10000 with root credentials.
