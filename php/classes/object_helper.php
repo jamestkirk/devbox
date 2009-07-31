@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * REQUIRES PHP 5.3
+ */
 class Object_Helper 
 {
 	
