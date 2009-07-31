@@ -1,6 +1,8 @@
 <?php
 /**
  * REQUIRES PHP 5.3
+ * it needs 5.3 is because it works on private and protected properties as well
+ * if you just want to check public properties you can make it work in < 5.3
  */
 class Object_Helper 
 {
@@ -20,27 +22,19 @@ class Object_Helper
 	{
 		$refobj = new ReflectionObject($object);
 		$refprops = $refobj->getProperties();
-		if (is_array($needle))
+		foreach($refprops as $prop) 
 		{
-			foreach($refprops as $prop) 
+			$prop->setAccessible(TRUE);
+			if (is_array($needle))
 			{
-				$prop->setAccessible(TRUE);
 				if(in_array($prop->getValue($object), $needle)) 
-				{
 					return TRUE;
-				}
 			}
-		}
-		else 
-		{
-			foreach($refprops as $prop) 
+			else
 			{
-				$prop->setAccessible(TRUE);
-				if($prop->getValue($object) == $needle)) 
-				{
+				if($prop->getValue($object) === $needle)) 
 					return TRUE;
-				}
-			}	
+			}
 		}
 		return FALSE;
 	}
