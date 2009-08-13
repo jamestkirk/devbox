@@ -1,3 +1,5 @@
+@import url('reset.css');
+
 html,body { width: 100%; }
 
 body { font-size: 62.5%; }
@@ -27,48 +29,52 @@ body { font-size: 62.5%; }
 /* @group MESSAGES */
 
 .info, .success, .warning, .error, .validation {
-    border: 1px solid;
-    margin: 10px 0px;
-    padding:15px 10px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    list-style-type: disc;
+	border: 1px solid;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	list-style-type: disc;
 }
 .info li, .success li, .warning li, .error li, .validation li {
-	margin-left: 10px;
+	margin: 0 0 0 16px;
+	padding: 2px 0;
 }
 .info {
-    color: #00529B;
-    background-color: #BDE5F8;
+	color: #00529B;
+	background-color: #BDE5F8;
 }
-.info a,.info a:link {
+.info a:link {
 	color: #00529B !important;
 }
 .success {
-    color: #4F8A10;
-    background-color: #DFF2BF;
+	color: #4F8A10;
+	background-color: #DFF2BF;
 }
-.success a,.success a:link {
+.success a:link {
 	color: #4F8A10 !important;
 }
 .warning {
-    color: #9F6000;
-    background-color: #FEEFB3;
+	color: #9F6000;
+	background-color: #FEEFB3;
 }
-.warning a,.warning a:link {
+.warning a:link {
 	color: #9F6000 !important;
 }
 .error {
-    color: #D8000C;
-    background-color: #FFBABA;
+	color: #D8000C;
+	background-color: #FFBABA;
 }
-.error a,.error a:link {
+.error a:link {
 	color: #D8000C !important;
 }
-
 .validation {
-    color: #D63301;
-    background-color: #FFCCBA;
+	color: #D63301;
+	background-color: #FFCCBA;
 }
+.validation a:link {
+	color: #D63301 !important;
+}
+
 
 /* @end */

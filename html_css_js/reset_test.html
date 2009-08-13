@@ -4,11 +4,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Reset Test</title>
-	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" charset="utf-8" />
-	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<style type="text/css">
 	#wrapper {
 		font-size: 2em;
+		padding: 20px;
 	}
 	</style>
 </head>
@@ -23,14 +23,7 @@
 		   <li>also part of a unordered list</li>
 		</ul>
 		<h3>Header 3</h3>
-		<p>Block below is a pre block followed by a code block</p>
-		<pre>
-		#pre h1 a { 
-			display: block; 
-			width: 300px; 
-			height: 80px; 
-		}
-		</pre>
+		<p>Code block</p>
 		<code>
 		#code h1 a { 
 			display: block; 
@@ -90,15 +83,17 @@
 			<input type="submit" value="Submit" />
 		</fieldset>
 		
+		<br /><br />
+		
 		<div class="info">This is an info message!</div>
-		
 		<div class="success">This is a success message!</div>
-
 		<div class="warning">This is a warning message!</div>
-		
-		<div class="validation">This is a validation message!</div>
-		
+		<ul class="validation">
+			<li>This is a validation message!</li>
+			<li>Required you idiot!</li>
+		</ul>
 		<div class="error">This is a error message!</div>
+
 		
 	</div>
 </body>
