@@ -10,6 +10,7 @@ class Cli
 			'set' => true
 		)
 	);
+	private $commit_hash;
 	private $template_files = array(
 		'default.html',
 		'js/common.js',
@@ -44,18 +45,24 @@ class Cli
 				$this->error("Directory is not empty \"$dir\"");
 			
 			$this->create_dirs($dir);
+
+			$repo = json_decode(file_get_contents('http://github.com/api/v2/json/repos/show/jamestkirk/devbox/branches'));
+			if (isset($repo->branches->master))
+				$this->commit_hash = $repo->branches->master;
+			else
+				$this->error("Could not fetch latest commit hash.");
+
 			
-			$commit = '445edf77cf35bc614fd413f979fa81545e619dfc';
 			foreach ($this->template_files as $file)
 			{
 				if (!is_dir($dir) && !@mkdir($dir))
 					$this->error("Could not create directory \"$dir\"");
 
-				$this->flush("Copying http://github.com/jamestkirk/devbox/raw/$commit/html_css_js/$file");
-				$success = @copy("http://github.com/jamestkirk/devbox/raw/$commit/html_css_js/$file", $dir . $file);
+				$this->flush("Copying http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/html_css_js/$file");
+				$success = @copy("http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/html_css_js/$file", $dir . $file);
 				if (!$success)
 				{
-					$this->flush("Failed Copying http://github.com/jamestkirk/devbox/raw/$commit/html_css_js/$file");
+					$this->flush("Failed Copying http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/html_css_js/$file");
 					break;
 				}
 			}
