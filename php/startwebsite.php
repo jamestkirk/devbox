@@ -1,5 +1,14 @@
 <?php
 
+/*
+usage: php startwebsite.php [options] [directory_name]
+Flag      Name                Details
+-v        verbose             Shows files and directories downloaded and created.
+
+requirements:
+- allow_url_fopen must be set to true on your php.ini
+- json extension
+*/
 
 class Cli
 {
@@ -128,8 +137,8 @@ class Cli
 		$this->out = "usage: php " . basename(__FILE__) . " [options] [directory_name]\n";
 		$this->out .= $this->get_options();
 		$this->out .= "requirements:
-- PHP binary must be installed with curl extension
 - allow_url_fopen must be set to true on your php.ini
+- json extension
 ";
 	}
  	private function get_options()
