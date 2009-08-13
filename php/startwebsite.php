@@ -67,11 +67,11 @@ class Cli
 				if (!is_dir($dir) && !@mkdir($dir))
 					$this->error("Could not create directory \"$dir\"");
 
-				$this->flush("Copying http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/html_css_js/$file");
-				$success = @copy("http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/html_css_js/$file", $dir . $file);
+				$this->flush("Copying http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/clientside/$file");
+				$success = @copy("http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/clientside/$file", $dir . $file);
 				if (!$success)
 				{
-					$this->flush("Failed Copying http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/html_css_js/$file");
+					$this->flush("Failed Copying http://github.com/jamestkirk/devbox/raw/{$this->commit_hash}/clientside/$file");
 					break;
 				}
 			}
