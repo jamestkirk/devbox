@@ -32,12 +32,12 @@ var Site = {
 	
 	/*
 	Use the following methodology when creating additional functions
-	home: function() {
+	home: {
 		// This function shall be called inline around a domready event.
 		init: function() {
 			
-		}
-		
+		},
+
 		update: function() {
 			// Function associated with home
 		},
