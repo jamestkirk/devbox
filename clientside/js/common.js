@@ -1,53 +1,54 @@
-var Site = {
+var Site;
 
-	// this vars should be set in <head> server-side
-	config: {
-		base_url: '',
-		site_url: ''
-	},
+(function($) {
+	Site = {
+
+		// this vars should be set in <head> server-side
+		config: {
+			base_url: '',
+			site_url: ''
+		},
 	
-	// this method is called on every page
-	init: function() {
-
-		// On Dom Ready
-		jQuery(function($) {
-
-		});
-		
-		// On Window Load
-		jQuery(window).load(function ($) {
-
-		});
-		
-		// Load Immediately
-		(function($) {
-		
-		})(jQuery);
-
-		if ($.browser.msie && $.browser.version <= 6 )
-		{
-			// gay stuff goes here
-		}
-	}
-	
-	/*
-	Use the following methodology when creating additional functions
-	home: {
-		// This function shall be called inline around a domready event.
+		// this method is called on every page
 		init: function() {
 			
-		},
-
-		update: function() {
-			// Function associated with home
-		},
+			// On Dom Ready
+			$(function() {
+				
+			});
 		
-		add: function() {
-			// Another function associated with home
+			// On Window Load
+			$(window).load(function ($) {
+
+			});
+		
+			// Load gay stuff goes here
+			if ($.browser.msie && $.browser.version <= 6 )
+			{
+
+			}
+			
+			// Load Immediately
 		}
-	}
-	*/
 	
-};
+		/*
+		Use the following methodology when creating additional functions
+		home: {
+			// This function shall be called inline around a domready event.
+			init: function() {
+			
+			},
+
+			update: function() {
+				// Function associated with home
+			},
+		
+			add: function() {
+				// Another function associated with home
+			}
+		}
+		*/
+	};
+})(jQuery);
 
 Site.init();
