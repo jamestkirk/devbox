@@ -3,13 +3,13 @@ var Site;
 (function($) {
 	Site = {
 
-		// this vars should be set in <head> server-side
+		// This vars should be set in <head> server-side
 		config: {
 			base_url: '',
 			site_url: ''
 		},
 	
-		// this method is called on every page
+		// This method is called on every page
 		init: function() {
 			
 			// On Dom Ready
