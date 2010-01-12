@@ -34,7 +34,7 @@ var Site;
 		/*
 		Use the following methodology when creating additional functions
 		home: {
-			// This function shall be called inline around a domready event.
+			// This function shall be called inline on every page
 			init: function() {
 			
 			},
