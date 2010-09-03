@@ -10,10 +10,10 @@ ol, ul { list-style: none; }
 
 caption, th, td { text-align: left; }
 
-h1, h2, h3, h4, h5, h6 { font-size: 1em; font-weight: normal; }
+h1, h2, h3, h4, h5, h6 { font-size: 1em; font-weight: bold; }
 
 select, option, input, textarea { font-size: inherit; font-family: inherit; }
 
 a, a:link, a:visited, a:active, a:focus { outline: none !important; }
 
-body { font-size: 62.5%; line-height: 1; } /* line-height is a temporary trial */
+body { font-size: 10px; line-height: 1; } /* line-height is a temporary trial */
