@@ -18,17 +18,16 @@ var Site;
 			});
 		
 			// On Window Load
-			$(window).load(function ($) {
+			$(window).load(function() {
 
 			});
 		
 			// Load gay stuff goes here
-			if ($.browser.msie && $.browser.version <= 6 )
+			if ($.browser.msie && $.browser.version <= 6)
 			{
-
+				
 			}
-			
-			// Load Immediately
+
 		}
 	
 		/*
